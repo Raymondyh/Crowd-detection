@@ -1,0 +1,44 @@
+{
+  "id": "4725085",
+  "name": "识别系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "41669918",
+      "name": "区域人流",
+      "font_class": "quyurenliu",
+      "unicode": "ea19",
+      "unicode_decimal": 59929
+    },
+    {
+      "icon_id": "33067236",
+      "name": "人流特效",
+      "font_class": "renliutexiao",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "3590935",
+      "name": "管理员",
+      "font_class": "guanliyuan",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "4572455",
+      "name": "记录",
+      "font_class": "jilu",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5733321",
+      "name": "识别",
+      "font_class": "shibie",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    }
+  ]
+}

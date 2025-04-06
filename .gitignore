@@ -1,0 +1,10 @@
+# ºöÂÔ mp4 ÊÓÆµ
+*.mp4
+
+# ºöÂÔ IDEA ÅäÖÃ
+.idea/
+
+# ºöÂÔ node_modules£¨Vue Ç°¶ËÒÀÀµ£©
+node_modules/
+
+person_counting_yolo_flask/model/
