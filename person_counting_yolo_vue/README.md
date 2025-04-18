@@ -15,7 +15,6 @@ cnpm install
 cnpm run dev
 
 # 打包发布
-
 cnpm run build
 
 ```

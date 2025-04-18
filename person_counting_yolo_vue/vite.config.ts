@@ -1,7 +1,7 @@
-import vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue';//核心 Vue 插件，支持 .vue 文件解析
 import { resolve } from 'path';
 import { defineConfig, loadEnv, ConfigEnv } from 'vite';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';//允许在 <script setup> 中扩展组件名（用于调试和自动注册）
 
 const pathResolve = (dir: string) => {
 	return resolve(__dirname, '.', dir);
@@ -17,11 +17,15 @@ const viteConfig = defineConfig((mode: ConfigEnv) => {
 	return {
 		plugins: [vue(), vueSetupExtend()],
 		root: process.cwd(),
+		//alias（路径别名）
 		resolve: { alias },
+		//环境变量和 base 路径配置
 		base: mode.command === 'serve' ? './' : env.VITE_PUBLIC_PATH,
+		//加速依赖预构建，避免 dev 时首次编译卡顿
 		optimizeDeps: {
 			include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en', 'element-plus/lib/locale/lang/zh-tw'],
 		},
+		//实现 前端请求跨域代理
 		server: {
 			host: '0.0.0.0',
 			port: env.VITE_PORT as unknown as number,
@@ -44,6 +48,7 @@ const viteConfig = defineConfig((mode: ConfigEnv) => {
 				},
 			},
 		},
+		//build 构建优化
 		build: {
 			outDir: 'dist',
 			chunkSizeWarningLimit: 1500,
@@ -61,6 +66,7 @@ const viteConfig = defineConfig((mode: ConfigEnv) => {
 			},
 		},
 		css: { preprocessorOptions: { css: { charset: false } } },
+		//define 定义全局变量
 		define: {
 			__VUE_I18N_LEGACY_API__: JSON.stringify(false),
 			__VUE_I18N_FULL_INSTALL__: JSON.stringify(false),

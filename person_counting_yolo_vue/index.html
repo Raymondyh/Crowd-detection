@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- 设置视口以适应不同设备宽度，适用于响应式设计 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- 设置浏览器标签页的图标，路径应为相对路径 -->
 		<link rel="icon" href="./dist/logo.png" />
+		<!-- 设置网页标题 -->
+		<title>Person Counting YOLO Vue</title>
 	</head>
 	<body>
+		<!-- Vue 会将应用挂载到这个 div 元素上 -->
 		<div id="app"></div>
+		<!-- 嵌入百度统计的代码。目的是记录用户行为访问数据（页面停留时长、点击率等）。 -->
 		<script type="text/javascript">
 			var _hmt = _hmt || [];
 			(function () {
@@ -17,7 +23,9 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
+		<!-- 加载 Vue 应用的主入口文件，此文件是 TypeScript 编写的 -->
 		<script type="module" src="/src/main.ts"></script>
+		<!-- 加载百度地图的 JavaScript API，使用前需要注册开发者密钥（ak） -->
 		<script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=wsijQt8sLXrCW71YesmispvYHitfG9gv&s=1"></script>
 	</body>
 </html>
