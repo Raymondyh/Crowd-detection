@@ -15,6 +15,7 @@
 
 <script setup lang="ts" name="iconSelectorList">
 // 定义父组件传过来的值
+// 组件通信：父传子，props
 const props = defineProps({
 	// 图标列表数据
 	list: {
