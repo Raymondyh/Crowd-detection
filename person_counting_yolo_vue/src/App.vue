@@ -26,10 +26,11 @@ import mittBus from '/@/utils/mitt'; //事件总线（中小型项目中用于�
 import setIntroduction from '/@/utils/setIconfont';
 
 // 引入组件
-const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue')); //异步引入组件，利用懒加载优化性能，按需加载组件
-const Setings = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/setings.vue'));
-const CloseFull = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/closeFull.vue'));
-const Upgrade = defineAsyncComponent(() => import('/@/layout/upgrade/index.vue'));
+//异步引入组件，利用懒加载优化性能，按需加载组件
+const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue')); //锁屏系统
+const Setings = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/setings.vue')); //皮肤设置系统
+const CloseFull = defineAsyncComponent(() => import('/@/layout/navBars/breadcrumb/closeFull.vue')); //退出全屏
+const Upgrade = defineAsyncComponent(() => import('/@/layout/upgrade/index.vue')); //升级提示
 
 // 定义变量内容
 const { messages, locale } = useI18n();
