@@ -12,11 +12,7 @@ cnpm install
 
 # 运行项目
 
-cnpm run dev
+npm run dev
 
 # 打包发布
 cnpm run build
-
-```
-
-```

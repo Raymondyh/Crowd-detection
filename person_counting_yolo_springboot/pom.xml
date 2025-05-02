@@ -42,7 +42,6 @@
         </dependency>
 
         <!--        json转对象-->
-        <!-- 2020/12/16日最新 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -104,6 +103,7 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!-- MySQL 驱动 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
