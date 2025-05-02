@@ -7,6 +7,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
+//标记一个类为配置类，替代传统的 XML 配置文件。
+// 通过 Java 代码定义 Spring 容器的 Bean 及其依赖关系，实现 基于 Java 的配置。
 public class CorsConfig {
 
     // 当前跨域请求最大有效时长。这里默认1天
@@ -22,6 +24,7 @@ public class CorsConfig {
     }
 
     @Bean
+    //配置类中的 @Bean 方法默认返回单例对象。
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", buildConfig()); // 4 对接口配置跨域设置

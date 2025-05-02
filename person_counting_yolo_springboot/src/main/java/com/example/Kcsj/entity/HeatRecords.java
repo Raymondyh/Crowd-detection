@@ -8,22 +8,44 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@TableName("heatrecords")
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
+/**
+ * 热力记录实体类
+ * <p>
+ * 对应数据库表 heatrecords，用于存储热成像设备采集的监控数据记录。
+ * 包含设备信息、视频路径、统计人数等核心字段。
+ *
+ * 各字段的get和set
+ *
+ * <p>主要字段说明：
+ * <ul>
+ *   <li>id - 主键，自增</li>
+ *   <li>model - 设备型号，标识数据来源设备</li>
+ *   <li>videoPath - 原始视频存储路径</li>
+ *   <li>uploadedUrl - 处理后的视频访问地址</li>
+ * </ul>
+ *
+ * @author raymond
+ * @version 1.0
+ * @since 2024-12-07
+ */
+
+@TableName("heatrecords")  // MyBatis-Plus: 指定表名
+@Data                      // Lombok: 自动生成 getter/setter/toString/equals/hashCode
+@Builder                   // Lombok: 生成建造者模式
+@AllArgsConstructor        // Lombok: 全参构造器
+@NoArgsConstructor         // Lombok: 无参构造器
 public class HeatRecords {
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String model;
-    private String videoPath;
-    private String uploadedUrl;
-    private String username;
-    private String startTime;
-    private String height;
-    private String inCount;
-    private String outCount;
+    private String model;         // 对应数据库字段 model（模型信息）
+    private String videoPath;     // 对应数据库字段 video_path（视频路径）
+    private String uploadedUrl;   // 对应数据库字段 uploaded_url（上传后的URL地址）
+    private String username;      // 对应数据库字段 username（用户名）
+    private String startTime;     // 对应数据库字段 start_time（开始时间）
+    private String height;        // 对应数据库字段 height（高度）
+    private String inCount;       // 对应数据库字段 in_count（进入人数）
+    private String outCount;      // 对应数据库字段 out_count（离开人数）
 
     public Integer getId() {
         return id;
