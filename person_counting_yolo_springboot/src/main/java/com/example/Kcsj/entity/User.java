@@ -11,10 +11,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-/**
- * @author 林枫
- * @date 2023年02月27日 16:12
- */
+
 @TableName("user")
 @Data
 @Builder

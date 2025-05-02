@@ -11,7 +11,7 @@ export function useLoginApi() {
 	return {
 		signIn: (data: object) => {
 			return request({
-				url: '/user/signIn',
+				url: '/user/signIn', //相对 URL，实际为baseURL+url
 				method: 'post',
 				data,
 			});

@@ -70,11 +70,11 @@ const state = reactive({
 	show_items:[{
             value: true,
             label: '添加计数',
-          },
-          {
+        },
+        {
             value: false,
             label: '不计数',
-          }],
+        }],
 	height_item: [] as any,
 	img_path: '',
 	type_text:"正在保存",
