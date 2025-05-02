@@ -1,7 +1,28 @@
 # -*- coding: utf-8 -*-
-# @Time : 2024-11-15 10:14
-# @Author : 林枫
 # @File : flaskR.py
+# VideoProcessingApp类
+# 初始化时创建了Flask应用和SocketIO实例，设置了路由和WebSocket事件。
+# 路由包括获取文件列表、人流量统计和热力图统计的接口。
+# WebSocket用于实时通信，比如发送处理进度和消息。
+
+# setup_routes方法定义了三个HTTP接口：/file_names、/person_count和/heat_count。
+# 其中，/file_names用于获取模型列表，而另外两个接口处理视频流。
+# WebSocket的connect和disconnect事件处理客户端连接和断开，发送连接状态信息。
+
+# 在person_count方法中，
+# 处理视频流的逻辑包括
+# 下载视频、
+# 初始化检测器（PersonDetect）、
+# 处理帧数据，
+# 并通过生成器函数将视频帧以流的形式返回。
+# 同时，
+# 使用SocketIO发送处理进度和完成通知。
+# 处理完成后，将结果数据上传到指定服务器，并清理临时文件。
+
+# heat_count方法中，同上使用的是HeatDetect类，处理热力图的生成和统计。
+
+# save_data方法用于将处理后的统计结果通过POST请求发送到后端服务器保存，
+# 确保数据持久化和后续分析。
 
 import json
 import os
@@ -19,6 +40,8 @@ class VideoProcessingApp:
         """初始化 Flask 应用并设置路由"""
         self.app = Flask(__name__)
         self.socketio = SocketIO(self.app, cors_allowed_origins="*")  # 初始化 SocketIO
+        # 技术融合：采用Flask-SocketIO实现WebSocket通信，支持浏览器与服务器的双向实时数据传输
+        # 跨域支持：cors_allowed_origins="*"允许任意前端域名访问，需生产环境强化安全策略
         self.host = host
         self.port = port
         self.setup_routes()

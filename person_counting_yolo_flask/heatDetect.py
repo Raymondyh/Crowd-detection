@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time : 2024-11-20
-# @Author : 林枫
 # @File : detect.py
 
 import json

@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Time : 2024-11-20
-# @Author : 林枫
 # @File : personDetect.py
 
 import os
@@ -16,6 +14,7 @@ class PersonDetect:
     """
     视频检测类，用于加载模型，处理视频，上传结果等。
     """
+
     def __init__(self, model_path, video_path, height, show=False, show_in=True, show_out=True):
         self.model_path = model_path
         self.video_path = video_path
@@ -124,7 +123,6 @@ class PersonDetect:
         处理单帧视频，返回处理后的帧
         """
         return self.counter.count(frame)
-
 
     def process_video(self):
         """
