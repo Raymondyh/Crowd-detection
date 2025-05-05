@@ -11,13 +11,47 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+/**
+ * 用户实体类
+ * <p>
+ * 对应数据库表 user，用于存储用户相关信息。
+ * 包含用户的基本信息、认证信息和元数据。
+ * </p>
+ *
+ * <p>
+ * 主要字段说明：
+ * <ul>
+ *   <li>id - 用户ID，主键，自增</li>
+ *   <li>username - 用户名，唯一标识用户</li>
+ *   <li>password - 用户密码（建议加密存储）</li>
+ *   <li>name - 用户真实姓名</li>
+ *   <li>sex - 用户性别</li>
+ *   <li>email - 用户电子邮箱</li>
+ *   <li>tel - 用户联系电话</li>
+ *   <li>role - 用户角色（如admin/common）</li>
+ *   <li>avatar - 用户头像URL</li>
+ *   <li>time - 用户创建时间/注册时间</li>
+ * </ul>
+ * </p>
+ *
+ * @author raymond
+ * @version 1.0
+ * @since 2024-12-07
+ */
 
-@TableName("user")
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+
+@TableName("user")  // MyBatis-Plus: 指定表名
+@Data              // Lombok: 自动生成 getter/setter/toString/equals/hashCode
+@Builder           // Lombok: 生成建造者模式
+@AllArgsConstructor  // Lombok: 全参构造器
+@NoArgsConstructor   // Lombok: 无参构造器
 public class User {
+    /**
+     * 用户ID
+     * <p>
+     * 主键，自增
+     * </p>
+     */
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String username;
@@ -31,6 +65,7 @@ public class User {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date time;
 
+    // ======== Getter/Setter 方法 ========
     public Integer getId() {
         return id;
     }
